@@ -1,31 +1,10 @@
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
 import axios from 'axios';
 import React from 'react';
-// import styled from 'styled-components';
+import TopBar from './components/topbar/TopBar.jsx';
+// import Header from './header/Header.jsx';
+import Home from './pages/home/Home.jsx';
+import Single from "./pages/single/Single.jsx";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends React.Component {
   constructor (props) {
@@ -52,8 +31,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Sephora</h1>
-        <p>{this.state.currentName}</p>
+        <h1>Blog</h1>
+        {/* <p>{this.state.currentName}</p> */}
+        <TopBar />
+        <Home />
+        <Single />
       </div>
     );
   }
