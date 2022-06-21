@@ -1,62 +1,34 @@
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
-import axios from 'axios';
+// import axios from 'axios';
 import React from 'react';
-// import styled from 'styled-components';
+import TopBar from './components/topbar/TopBar.jsx';
+import Home from './pages/home/Home.jsx';
+import Single from "./pages/single/Single.jsx";
+import Write from './pages/write/Write.jsx';
+import Setting from './pages/setting/Setting.jsx';
+import Login from './pages/login/Login.jsx';
+import Register from './pages/register/Register.jsx';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
-class App extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-        currentName: ''
-    };
-  }
 
-  componentDidMount () {
-      this.oneProduct();
-  }
-
-  oneProduct () {
-    axios.get('/oneProduct')
-      .then((res) => {
-        console.log('res?', res);
-        this.setState({
-          currentName: res.data.brand.displayName
-        });
-      });
-    }
-
-  render() {
-    return (
-      <div className="App">
-        <h1>Sephora</h1>
-        <p>{this.state.currentName}</p>
-      </div>
-    );
-  }
+function App() {
+  const user = true;
+  return (
+    <BrowserRouter>
+      <TopBar />
+      <Routes>
+         <Route exact path="/" element={<Home />} />
+         <Route path="/register" element={user ? <Home /> : <Register />} />
+         <Route path="/login" element={user ? <Home /> : <Login />}/>
+         <Route path="/write" element={user ? <Write /> : <Register />} />
+         <Route path="/setting" element={user ? <Setting /> : <Register />} />
+         <Route path="/post/:postId" element={<Single />} />
+        </Routes>
+    </BrowserRouter>
+  )
 }
-
 export default App;
+
