@@ -13,7 +13,8 @@ module.exports = {
         password: hashedPass,
       });
       const user = await newUser.save();
-      res.status(200).json('register successfully!');
+      console.log("Register successfully!!!");
+      res.status(200).json(user);
     } catch (err) {
       console.log('err while register', err)
     }

@@ -11,11 +11,11 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
 
+
 function App() {
-  const user = false;
+  const user = true;
   return (
     <BrowserRouter>
       <TopBar />
@@ -32,44 +32,3 @@ function App() {
 }
 export default App;
 
-
-
-
-// class App extends React.Component {
-//   constructor (props) {
-//     super(props);
-//     this.state = {
-//         currentName: ''
-//     };
-//   }
-
-//   componentDidMount () {
-//       this.oneProduct();
-//   }
-
-//   oneProduct () {
-//     axios.get('/oneProduct')
-//       .then((res) => {
-//         console.log('res?', res);
-//         this.setState({
-//           currentName: res.data.brand.displayName
-//         });
-//       });
-//     }
-
-//   render() {
-//     return (
-//       <div className="App">
-//         <h1>Blog</h1>
-//         {/* <p>{this.state.currentName}</p> */}
-//         <TopBar />
-//         {/* <Home />
-//         <Single /> */}
-//         {/* <Write /> */}
-//         {/* <Setting /> */}
-//         {/* <Login /> */}
-//         <Register />
-//       </div>
-//     );
-//   }
-// }

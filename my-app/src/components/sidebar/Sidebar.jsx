@@ -20,12 +20,11 @@ export default function Sidebar() {
        <div className="sidebarItem">
        <span className="sidebarTitle">ABOUT ME</span>
         <img
-          src="https://themegoods-cdn-pzbycso8wng.stackpathdns.com/grandblog/demo/wp-content/uploads/2015/11/aboutme.jpg"
+          src="https://images.pexels.com/photos/6920368/pexels-photo-6920368.jpeg?cs=srgb&dl=pexels-karolina-grabowska-6920368.jpg&fm=jpg"
           alt=""
         />
         <p>
-          Laboris sunt aute cupidatat velit magna velit ullamco dolore mollit
-          amet ex esse.Sunt eu ut nostrud id quis proident.
+          Hi, I am Jessica and this is my MVP app.
         </p>
        </div>
        <div className="sidebarItem">
@@ -36,7 +35,6 @@ export default function Sidebar() {
               <Link to={`/?category=${c.name}`} className="link">
                    <li className="sidebarListItem">{c.name}</li>
               </Link>
-
             ))
           }
         </ul>
