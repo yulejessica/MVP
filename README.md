@@ -10,14 +10,15 @@ MVP is an simulator app that allows useres to write personal blog posts in real 
 
 
 ## Getting Started
-
+Make sure to cd into my-app folder
 1. Download dependencies with:
 
    > `npm install`
 
 3. Run with:
 
-   > `npm run dev`
+   > `npm run start`
+   > `npm run start-server`
 
 ## Technologies used
 ### **Set-up and Workflow**
@@ -28,6 +29,7 @@ MVP is an simulator app that allows useres to write personal blog posts in real 
 ### **Backend Development**
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/express-%23039BE5.svg?style=for-the-badge&logo=Express)
+![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
 ![MongoDB](https://img.shields.io/badge/mongodb-%23316192.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ### **Testing**
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
