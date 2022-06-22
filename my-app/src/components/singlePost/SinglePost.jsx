@@ -1,14 +1,14 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import axios from 'axios';
 import './singlepost.css';
-import { Context } from "../../context/Context";
+
 
 export default function SinglePost(){
   const location = useLocation()
   const path = location.pathname.split('/')[2];
   const [post, setPost] = useState({});
-  const { user } = useContext(Context);
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [updateMode, setUpdateMode] = useState(false);

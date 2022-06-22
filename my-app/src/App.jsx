@@ -1,33 +1,30 @@
-// import axios from 'axios';
 import React from 'react';
 import TopBar from './components/topbar/TopBar.jsx';
 import Home from './pages/home/Home.jsx';
 import Single from "./pages/single/Single.jsx";
 import Write from './pages/write/Write.jsx';
-import Setting from './pages/setting/Setting.jsx';
 import Login from './pages/login/Login.jsx';
-import Register from './pages/register/Register.jsx';
 import {
-  BrowserRouter,
+  BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
+import { useState } from "react";
 
 
 function App() {
-  const user = true;
+  const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'));
+
   return (
-    <BrowserRouter>
+    <Router>
       <TopBar />
       <Routes>
          <Route exact path="/" element={<Home />} />
-         <Route path="/register" element={user ? <Home /> : <Register />} />
-         <Route path="/login" element={user ? <Home /> : <Login />}/>
-         <Route path="/write" element={user ? <Write /> : <Register />} />
-         <Route path="/setting" element={user ? <Setting /> : <Register />} />
+         <Route path="/login" element={!isAuth ? <Login setIsAuth={setIsAuth} /> : <Home />}/>
+         <Route path="/write" element={!isAuth ? <Login setIsAuth={setIsAuth}/> : <Write />} />
          <Route path="/post/:postId" element={<Single />} />
         </Routes>
-    </BrowserRouter>
+    </Router>
   )
 }
 export default App;
