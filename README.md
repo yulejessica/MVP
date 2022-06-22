@@ -1,6 +1,6 @@
 # MVP
 
-# MVP - Personal Blog App
+Personal Blog App
 MVP Project at Hack Reactor (completed under 48 hours)
 
 MVP is an simulator app that allows useres to write personal blog posts in real time.
