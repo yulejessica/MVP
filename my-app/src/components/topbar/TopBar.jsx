@@ -1,8 +1,19 @@
 import { Link } from "react-router-dom";
 import "./topbar.css";
+import { signOut } from 'firebase/auth';
+import { auth } from '../../firebase-config';
+import { useState } from "react";
 
 export default function Topbar() {
-  const user = true;
+  const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'));
+  const signUserOut = () => {
+    signOut(auth).then(() => {
+      localStorage.clear()
+      setIsAuth(false)
+      window.location.pathname='/';
+    })
+  }
+
   return (
     <div className="top">
       <div className="topLeft">
@@ -17,38 +28,25 @@ export default function Topbar() {
             <Link className="link" to="/">HOME</Link>
           </li>
           <li className="topListItem">
-            <Link className="link" to="/">ABOUT</Link>
-            </li>
-          <li className="topListItem">
-          <Link className="link" to="/">CONTACT</Link>
-          </li>
-          <li className="topListItem">
             <Link className="link" to="/write">
               WRITE
             </Link>
           </li>
-          {user && <li className="topListItem">LOGOUT</li>}
+          {isAuth && <li className="topListItem" onClick={signUserOut}>LOGOUT</li>}
         </ul>
       </div>
       <div className="topRight">
-        {user ? (
-          <Link className="link" to="/settings">
+        {isAuth ? (
             <img
               className="topImg"
-              src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              src="https://images.pexels.com/photos/7407303/pexels-photo-7407303.jpeg?cs=srgb&dl=pexels-cottonbro-7407303.jpg&fm=jpg"
               alt=""
             />
-          </Link>
         ) : (
           <ul className="topList">
             <li className="topListItem">
               <Link className="link" to="/login">
                 LOGIN
-              </Link>
-            </li>
-            <li className="topListItem">
-              <Link className="link" to="/register">
-                REGISTER
               </Link>
             </li>
           </ul>
