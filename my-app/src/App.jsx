@@ -17,7 +17,7 @@ function App() {
 
   return (
     <Router>
-      <TopBar />
+      <TopBar isAuth={isAuth} setIsAuth={setIsAuth} />
       <Routes>
          <Route exact path="/" element={<Home />} />
          <Route path="/login" element={!isAuth ? <Login setIsAuth={setIsAuth} /> : <Home />}/>

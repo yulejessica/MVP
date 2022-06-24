@@ -1,6 +1,5 @@
 .sidebar {
   flex: 3;
-  height: fit-content;
   margin: 20px;
   padding-bottom: 30px;
   background-color: #fdfbfb;
@@ -22,7 +21,7 @@
   border-top: solid 1px #a7a4a4;
   border-bottom: solid 1px #a7a4a4;
   text-align: center;
-  font-family: "Varela Round", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   line-height: 19px;
   color: #222222;
@@ -62,4 +61,5 @@
 .sidebarIcon {
   font-size: 16px;
   margin-left: 10px;
+  cursor: pointer;
 }

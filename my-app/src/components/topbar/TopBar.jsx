@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import "./topbar.css";
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase-config';
-import { useState } from "react";
+// import { useState } from "react";
 
-export default function Topbar() {
-  const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'));
+export default function Topbar({isAuth, setIsAuth}) {
+  // const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'));
   const signUserOut = () => {
     signOut(auth).then(() => {
       localStorage.clear()
@@ -28,11 +28,11 @@ export default function Topbar() {
             <Link className="link" to="/">HOME</Link>
           </li>
           <li className="topListItem">
-            <Link className="link" to="/write">
-              WRITE
-            </Link>
+            <Link className="link" to="/write">WRITE</Link>
           </li>
-          {isAuth && <li className="topListItem" onClick={signUserOut}>LOGOUT</li>}
+          {isAuth &&
+           <li className="topListItem" onClick={signUserOut}>LOGOUT</li>
+          }
         </ul>
       </div>
       <div className="topRight">

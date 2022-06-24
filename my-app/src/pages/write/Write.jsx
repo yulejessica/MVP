@@ -1,8 +1,6 @@
 import './write.css';
 import { useState } from 'react';
 import axios from "axios";
-// import { Context } from "../../context/Context";
-
 
 export default function Write(){
   const [username, setUsername] = useState("");
@@ -17,8 +15,8 @@ export default function Write(){
       description,
     }
     try {
-     const res = await axios.post('/posts', newPost);
-     window.location.replace('/post/'+ res.data._id);
+      const res = await axios.post('/posts', newPost);
+      window.location.replace('/post/'+ res.data._id);
     }catch(err) {
       console.log('error while write new post', err);
     }
@@ -28,7 +26,7 @@ export default function Write(){
     <div className="write">
       <img
         className="writeImg"
-        src="https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+        src="https://images.pexels.com/photos/6594387/pexels-photo-6594387.jpeg?cs=srgb&dl=pexels-anna-tarazevich-6594387.jpg&fm=jpg"
         alt=""
       />
         <form className="writeForm" onSubmit={handleSubmit}>
