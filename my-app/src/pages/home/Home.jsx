@@ -6,7 +6,7 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import "./home.css";
 import { useLocation } from "react-router-dom";
 
-export default function Home() {
+export default function Home({isAuth}) {
   const [posts, setPosts] = useState([]);
   const location = useLocation();
   const search = location.search;

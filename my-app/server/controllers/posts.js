@@ -1,4 +1,3 @@
-var User = require('../models/user.js');
 var Post = require('../models/post.js');
 
 module.exports = {
@@ -48,7 +47,6 @@ module.exports = {
     try{
       const post = await Post.findById(req.params.id);
       if(post.username === req.body.username) {
-
         try{
           const updatedPost = await Post.findByIdAndUpdate(req.params.id,
             {
